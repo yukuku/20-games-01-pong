@@ -1,8 +1,10 @@
-extends CharacterBody2D
+extends AnimatableBody2D
 
-@export var speed: float = 400.0
+@export var speed: float = 500.0
 @export var up_action: String = "ui_up"
 @export var down_action: String = "ui_down"
+@export var min_y: float = 66.0
+@export var max_y: float = 654.0
 
 func _physics_process(delta: float) -> void:
 	var dir := 0.0
@@ -11,5 +13,5 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed(down_action):
 		dir += 1.0
 		
-	velocity = Vector2(0, dir * speed)
-	move_and_slide()
+	var new_y := position.y + dir * speed * delta
+	position.y = clamp(new_y, min_y, max_y)

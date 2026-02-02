@@ -5,7 +5,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ut3sq"]
 height = 128.0
 
-[node name="Paddle" type="CharacterBody2D" unique_id=906341627]
+[node name="Paddle" type="AnimatableBody2D" unique_id=1694887795]
 script = ExtResource("1_0sbc1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500688469]

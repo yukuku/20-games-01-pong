@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dhcrkbo7d2npf" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://o70lkmalpm7m" path="res://paddle.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://d0jnkm5stgs14" path="res://bola.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://8uwhrguuyidq" path="res://paddle_ai.gd" id="3_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(1288, 20)
@@ -46,10 +47,11 @@ down_action = "paddle_left_down"
 
 [node name="PaddleRight" parent="." unique_id=2038174784 instance=ExtResource("1_ig7tw")]
 position = Vector2(1234, 282)
-up_action = "paddle_right_up"
-down_action = "paddle_right_down"
+script = ExtResource("3_1bvp3")
+speed = 300.0
 
 [node name="Bola" parent="." unique_id=475503913 instance=ExtResource("2_0xm2m")]
+unique_name_in_owner = true
 position = Vector2(642, 346)
 initial_speed = 400.0
 
@@ -79,7 +81,7 @@ offset_top = 24.0
 offset_right = 150.0
 offset_bottom = 69.0
 theme_override_font_sizes/font_size = 32
-text = "Zero"
+text = "Zero (WS to move the left paddle)"
 
 [node name="SkorRight" type="Label" parent="HUD" unique_id=1577643468]
 offset_left = 1144.0
