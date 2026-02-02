@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://o70lkmalpm7m"]
+
+[ext_resource type="Script" uid="uid://cj6p5no5stkc1" path="res://paddle.gd" id="1_0sbc1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ut3sq"]
+height = 128.0
+
+[node name="Paddle" type="CharacterBody2D" unique_id=906341627]
+script = ExtResource("1_0sbc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500688469]
+shape = SubResource("CapsuleShape2D_ut3sq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=818926554]
+offset_left = -8.0
+offset_top = -64.0
+offset_right = 8.0
+offset_bottom = 64.0
